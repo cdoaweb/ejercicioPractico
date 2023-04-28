@@ -7,8 +7,9 @@ public class Main {
     static ArrayList<Producto> productos = new ArrayList<>();
 
     public static void main(String[] args) {
-        int opcion;
         int indice;
+        int opcion;
+
         do {
             System.out.println("=== Menú principal ===");
             System.out.println("1. Añadir producto");
@@ -24,17 +25,10 @@ public class Main {
                     nuevoProducto();
                      }
                 case 2 -> {
-                    System.out.print("Índice del producto a borrar: ");
-                    indice = scanner.nextInt();
-                    scanner.nextLine();
-                    if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
-                    } else {
-                        productos.remove(indice);
-                        System.out.println("Producto borrado correctamente");
-                    }
-                }
+                    eliminarProducto();
+                       }
                 case 3 -> {
+                    modificarProducto();
                     System.out.print("Índice del producto a modificar: ");
                     indice = scanner.nextInt();
                     scanner.nextLine();
@@ -70,6 +64,19 @@ public class Main {
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
+    }
+
+    private static void eliminarProducto() {
+        int indice;
+        System.out.print("Índice del producto a borrar: ");
+        indice = scanner.nextInt();
+        scanner.nextLine();
+        if (indice < 0 || indice >= productos.size()) {
+            System.out.println("Índice no válido");
+        } else {
+            productos.remove(indice);
+            System.out.println("Producto borrado correctamente");
+        }
     }
 
     private static void nuevoProducto() {
