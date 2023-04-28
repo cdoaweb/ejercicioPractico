@@ -29,7 +29,25 @@ public class Main {
                        }
                 case 3 -> {
                     modificarProducto();
-                    System.out.print("Índice del producto a modificar: ");
+                              }
+                case 4 -> {
+                    System.out.println("=== Listado de productos ===");
+                    for (int i = 0; i < productos.size(); i++) {
+                        Producto productoAMostrar = productos.get(i);
+                        System.out.println(i + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
+                    }
+
+                    System.out.println("============================");
+                }
+                case 5 -> System.out.println("¡Hasta luego!");
+                default -> System.out.println("Opción no válida");
+            }
+        } while (opcion != 5);
+    }
+
+    private static void modificarProducto() {
+        int indice;
+        System.out.print("Índice del producto a modificar: ");
                     indice = scanner.nextInt();
                     scanner.nextLine();
                     if (indice < 0 || indice >= productos.size()) {
@@ -50,20 +68,7 @@ public class Main {
 
                         System.out.println("Producto modificado correctamente");
                     }
-                }
-                case 4 -> {
-                    System.out.println("=== Listado de productos ===");
-                    for (int i = 0; i < productos.size(); i++) {
-                        Producto productoAMostrar = productos.get(i);
-                        System.out.println(i + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
-                    }
-
-                    System.out.println("============================");
-                }
-                case 5 -> System.out.println("¡Hasta luego!");
-                default -> System.out.println("Opción no válida");
-            }
-        } while (opcion != 5);
+      
     }
 
     private static void eliminarProducto() {
