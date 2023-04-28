@@ -21,15 +21,8 @@ public class Main {
             scanner.nextLine();
             switch (opcion) {
                 case 1 -> {
-                    System.out.print("Nombre del producto: ");
-                    String nombre = scanner.nextLine();
-                    System.out.print("Precio del producto: ");
-                    double precio = scanner.nextDouble();
-                    scanner.nextLine();
-                    Producto producto = new Producto(nombre, precio);
-                    productos.add(producto);
-                    System.out.println("Producto añadido correctamente");
-                }
+                    nuevoProducto();
+                     }
                 case 2 -> {
                     System.out.print("Índice del producto a borrar: ");
                     indice = scanner.nextInt();
@@ -77,5 +70,17 @@ public class Main {
                 default -> System.out.println("Opción no válida");
             }
         } while (opcion != 5);
+    }
+
+    private static void nuevoProducto() {
+        System.out.print("Nombre del producto: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Precio del producto: ");
+        double precio = scanner.nextDouble();
+        scanner.nextLine();
+        Producto producto = new Producto(nombre, precio);
+        productos.add(producto);
+        System.out.println("Producto añadido correctamente");
+  
     }
 }
