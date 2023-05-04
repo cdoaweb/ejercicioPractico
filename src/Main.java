@@ -51,11 +51,11 @@ public class Main {
 
     private static void modificarProducto() {
         int indice;
-        System.out.print("Índice del producto a modificar: ");
+        System.out.print("Indice del producto a modificar: ");
                     indice = scanner.nextInt();
                     scanner.nextLine();
                     if (indice < 0 || indice >= productos.size()) {
-                        System.out.println("Índice no válido");
+                        System.out.println("Indice no valido");
                     } else {
                         System.out.print("Nuevo nombre del producto (deja vacío para no modificar): ");
                         String nuevoNombre = scanner.nextLine();
@@ -77,11 +77,11 @@ public class Main {
 
     private static void eliminarProducto() {
         int indice;
-        System.out.print("Índice del producto a borrar: ");
+        System.out.print("Indice del producto a borrar: ");
         indice = scanner.nextInt();
         scanner.nextLine();
         if (indice < 0 || indice >= productos.size()) {
-            System.out.println("Índice no válido");
+            System.out.println("Indice no valido");
         } else {
             productos.remove(indice);
             System.out.println("Producto borrado correctamente");
