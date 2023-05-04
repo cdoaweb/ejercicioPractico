@@ -31,18 +31,22 @@ public class Main {
                     modificarProducto();
                               }
                 case 4 -> {
-                    System.out.println("=== Listado de productos ===");
+                    listadoProductos();
+                  }
+                case 5 -> System.out.println("¡Hasta luego!");
+                default -> System.out.println("Opción no válida");
+            }
+        } while (opcion != 5);
+    }
+
+    private static void listadoProductos() {
+        System.out.println("=== Listado de productos ===");
                     for (int i = 0; i < productos.size(); i++) {
                         Producto productoAMostrar = productos.get(i);
                         System.out.println(i + ". " + productoAMostrar.getNombre() + " - $" + productoAMostrar.getPrecio());
                     }
 
                     System.out.println("============================");
-                }
-                case 5 -> System.out.println("¡Hasta luego!");
-                default -> System.out.println("Opción no válida");
-            }
-        } while (opcion != 5);
     }
 
     private static void modificarProducto() {
