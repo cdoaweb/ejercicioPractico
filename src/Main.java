@@ -1,10 +1,21 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+/** 
+ * Clase Main
+ * Esta es la clase principal que contiene el método main, que es el punto de entrada de la aplicación.
+ * @author Carlos Daniel Ondó
+ * @version 1.0
+*/
 
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Producto> productos = new ArrayList<>();
+
+    /**
+     * main
+     * Este método es el punto de entrada de la aplicación. Se encarga de imprimir el menú principal, leer la opción del usuario y llamar a los métodos correspondientes según la opción seleccionada. El bucle do-while se ejecuta hasta que el usuario selecciona la opción "Salir" (opción 5).
+     */
 
     public static void main(String[] args) {
         int indice;
@@ -39,6 +50,11 @@ public class Main {
         } while (opcion != 5);
     }
 
+    /** 
+     *  listadoProductos
+     * Este método se encarga de imprimir por pantalla el listado de productos almacenados en el ArrayList "productos". Recorre el ArrayList y muestra el índice, el nombre y el precio de cada producto.
+     * @since 1.1
+     */
     private static void listadoProductos() {
         System.out.println("=== Listado de productos ===");
                     for (int i = 0; i < productos.size(); i++) {
@@ -49,6 +65,11 @@ public class Main {
                     System.out.println("============================");
     }
 
+    /** 
+     * modificarProducto
+     *  Este método permite al usuario modificar un producto existente en el ArrayList "productos". Pide al usuario el índice del producto a modificar, el nuevo nombre y el nuevo precio del producto. Si el usuario no introduce nada en alguno de los campos, no se modifica ese atributo del producto.
+     * @since 1.1
+     */
     private static void modificarProducto() {
         int indice;
         System.out.print("Indice del producto a modificar: ");
@@ -75,6 +96,11 @@ public class Main {
       
     }
 
+    /**
+     * eliminarProducto
+     * Este método permite al usuario eliminar un producto existente en el ArrayList "productos". Pide al usuario el índice del producto a eliminar y lo borra del ArrayList.
+     * @since 1.1
+     */
     private static void eliminarProducto() {
         int indice;
         System.out.print("Indice del producto a borrar: ");
@@ -88,6 +114,11 @@ public class Main {
         }
     }
 
+    /**
+     * nuevoProducto
+     * Este método permite al usuario añadir un nuevo producto al ArrayList "productos". Pide al usuario el nombre y el precio del producto y crea un objeto Producto con esos datos, que se añade al ArrayList.
+     * @since 1.1
+     */
     private static void nuevoProducto() {
         System.out.print("Nombre del producto: ");
         String nombre = scanner.nextLine();
